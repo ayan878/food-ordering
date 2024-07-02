@@ -1,6 +1,6 @@
 Creating a `README.md` file for a backend project involves providing clear instructions and documentation for setting up and running the project. Here's a structured `README.md` file based on your instructions:
 
-```markdown
+
 # Backend Project
 
 ## Project Setup
