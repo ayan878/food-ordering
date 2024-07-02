@@ -1,11 +1,11 @@
-Creating a `README.md` file for a backend project involves providing clear instructions and documentation for setting up and running the project. Here's a structured `README.md` file based on your instructions:
 
+# Full Stack Food ordering app
 
-# Backend Project
+## Backend Project
 
-## Project Setup
+### Project Setup
 
-### Create Backend Folder
+#### Create Backend Folder
 
 1. Create a directory named `backend` for your backend project.
 
@@ -14,7 +14,7 @@ Creating a `README.md` file for a backend project involves providing clear instr
    cd backend
    ```
 
-### Initialize Node.js Project
+#### Initialize Node.js Project
 
 2. Initialize a new Node.js project with default settings.
 
@@ -22,7 +22,7 @@ Creating a `README.md` file for a backend project involves providing clear instr
    npm init -y
    ```
 
-### Install Dependencies
+#### Install Dependencies
 
 3. Install necessary Node.js packages for building the backend:
 
@@ -37,7 +37,7 @@ Creating a `README.md` file for a backend project involves providing clear instr
    - `ts-node` and `typescript`: TypeScript support for Node.js development
    - `nodemon`: Utility for automatically restarting the server during development
 
-### Configure `package.json`
+#### Configure `package.json`
 
 4. Update the `package.json` file:
 
@@ -55,7 +55,7 @@ Creating a `README.md` file for a backend project involves providing clear instr
      }
      ```
 
-## Running the Project
+### Running the Project
 
 5. To start the backend server in development mode, run:
 
@@ -65,7 +65,7 @@ Creating a `README.md` file for a backend project involves providing clear instr
 
    This command will use `nodemon` to monitor changes in your TypeScript files and automatically restart the server.
 
-## Project Structure
+### Project Structure
 
 6. Create a basic project structure:
 
@@ -74,7 +74,7 @@ Creating a `README.md` file for a backend project involves providing clear instr
    touch src/index.ts
    ```
 
-### Example `src/index.ts` File
+#### Example `src/index.ts` File
 
 7. Add the following code to `src/index.ts` to set up a basic Express server:
 
@@ -97,7 +97,7 @@ Creating a `README.md` file for a backend project involves providing clear instr
    });
    ```
 
-## Environment Variables
+### Environment Variables
 
 8. Create a `.env` file in the root directory to store environment variables:
 
@@ -106,7 +106,7 @@ Creating a `README.md` file for a backend project involves providing clear instr
    MONGO_URI=your_mongo_database_uri
    ```
 
-## Connecting to MongoDB
+### Connecting to MongoDB
 
 9. Set up Mongoose to connect to MongoDB by creating a `src/db.ts` file:
 
@@ -153,19 +153,103 @@ Creating a `README.md` file for a backend project involves providing clear instr
     });
     ```
 
-## Additional Information
+### Additional Information
 
 - Ensure that you have Node.js and npm installed on your system.
 - Use a `.env` file to manage environment variables securely.
 - Customize the project structure and code as needed to fit your specific requirements.
 
-### Explanation:
-- **Folder Creation**: Create a directory named `backend` to organize your backend project.
-- **Initialization**: Initialize a new Node.js project with default settings using `npm init -y`.
-- **Dependency Installation**: Install necessary packages (`express`, `cors`, `mongodb`, `mongoose`, `ts-node`, `typescript`, `nodemon`, and their TypeScript type definitions).
-- **Configuration**: Update `package.json` to specify `main` entry point as `/src/index.ts` and add a `dev` script for running the development server with `nodemon`.
-- **Running the Server**: Provide instructions to start the backend server in development mode using `npm run dev`.
-- **Project Structure**: Create a basic project structure with directories for controllers, models, and routes.
-- **Example Code**: Provide example code for setting up an Express server and connecting to MongoDB.
-- **Environment Variables**: Use a `.env` file for environment variables and connect to MongoDB with Mongoose.
+## Frontend Project
 
+### Project Setup
+
+#### Initialize Vite Project
+
+1. Create a new Vite project.
+
+   ```bash
+   npm create vite@latest
+   cd your-project-name
+   npm install
+   ```
+
+#### Install Tailwind CSS
+
+2. Install Tailwind CSS and its dependencies.
+
+   ```bash
+   npm install -D tailwindcss postcss autoprefixer
+   ```
+
+3. Initialize Tailwind CSS.
+
+   ```bash
+   npx tailwindcss init -p
+   ```
+
+#### Configure `tsconfig.json`
+
+4. Update `tsconfig.json` to set up path aliases.
+
+   ```json
+   {
+     "compilerOptions": {
+       // ...
+       "baseUrl": ".",
+       "paths": {
+         "@/*": [
+           "./src/*"
+         ]
+       }
+       // ...
+     }
+   }
+   ```
+
+#### Install Type Definitions for Node.js
+
+5. Install type definitions for Node.js.
+
+   ```bash
+   npm install -D @types/node
+   ```
+
+### Configure Vite
+
+6. Update `vite.config.ts` to include path aliases.
+
+   ```typescript
+   import path from 'path';
+   import react from '@vitejs/plugin-react';
+   import { defineConfig } from 'vite';
+
+   export default defineConfig({
+     plugins: [react()],
+     resolve: {
+       alias: {
+         '@': path.resolve(__dirname, './src'),
+       },
+     },
+   });
+   ```
+
+### Initialize Shadcn UI
+
+7. Initialize Shadcn UI.
+
+   ```bash
+   npx shadcn-ui@latest init
+   ```
+
+## Additional Information
+
+- Ensure that you have Node.js and npm installed on your system.
+- Customize the project structure and code as needed to fit your specific requirements.
+
+### Explanation:
+
+- **Backend**: Instructions for setting up the backend environment using Node.js, Express, MongoDB, and Mongoose. Includes creating the folder, initializing the project, installing dependencies, configuring `package.json`, and connecting to MongoDB.
+- **Frontend**: Instructions for setting up the frontend environment using Vite, Tailwind CSS, and React. Includes initializing the project, installing Tailwind CSS, configuring path aliases, and initializing Shadcn UI.
+
+This `README.md` provides a comprehensive guide for setting up and running both the backend and frontend projects, ensuring that all necessary steps and explanations are included.
+```
