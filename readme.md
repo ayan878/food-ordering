@@ -250,6 +250,3 @@
 
 - **Backend**: Instructions for setting up the backend environment using Node.js, Express, MongoDB, and Mongoose. Includes creating the folder, initializing the project, installing dependencies, configuring `package.json`, and connecting to MongoDB.
 - **Frontend**: Instructions for setting up the frontend environment using Vite, Tailwind CSS, and React. Includes initializing the project, installing Tailwind CSS, configuring path aliases, and initializing Shadcn UI.
-
-This `README.md` provides a comprehensive guide for setting up and running both the backend and frontend projects, ensuring that all necessary steps and explanations are included.
-```
