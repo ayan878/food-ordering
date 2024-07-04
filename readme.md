@@ -309,3 +309,10 @@ To install `react-router-dom`, you need to use the correct npm package name and 
    ```
    npm install react-router-dom
    ```
+### Installing auth0
+Auth0 can be integrated with React applications using the Context API to manage authentication state and provide it to different components
+.
+  Run the following command to install `auth0`:
+  ```
+  npm install @auth0/auth0-react
+  ```
