@@ -299,3 +299,13 @@ Replace `username`, `password`, `host`, `port`, and `database_name` with your Po
 ### 3. Using Environment Variables in Your Application
 
 In your application code (e.g., Node.js, Python, etc.), you can load these variables from the `.env` file using libraries such as `dotenv` (for Node.js) or `python-dotenv` (for Python)
+
+To install `react-router-dom`, you need to use the correct npm package name and ensure proper spelling. Here’s how you can do it:
+
+### Installing react-router-dom
+
+  Run the following command to install `react-router-dom`:
+
+   ```
+   npm install react-router-dom
+   ```
