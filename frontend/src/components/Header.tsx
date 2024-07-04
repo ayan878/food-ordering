@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import MobileNavbar from "./MobileNav";
+import MobileNavbar from "./ui/MobileNav";
 import MainNav from "./MainNav";
 
 export default function Header() {
