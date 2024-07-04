@@ -1,6 +1,6 @@
 import { Menu } from "lucide-react";
-import { Button } from "./button";
-import { Separator } from "./separator";
+import { Button } from "./ui/button";
+import { Separator } from "./ui/separator";
 import {
   Sheet,
   SheetContent,
@@ -8,7 +8,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "./sheet"
+} from "./ui/sheet"
 
 
 export default function MobileNavbar() {
