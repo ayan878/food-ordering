@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import MobileNavbar from "./MobileNavbar";
+import MobileNavbar from "./MobileNav";
 
 export default function Header() {
   return (
