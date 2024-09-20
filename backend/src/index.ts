@@ -9,8 +9,22 @@ const app = Express();
 app.use(Express.json());
 app.use(cors());
 
-mongoose.connect(``).then(() => {
-  app.listen(3000, () => {
-    console.log(`server start on http://localhost:3000`);
+const mongoConnectionString = process.env.MONGODB_CONNECTION_STRING;
+
+if (!mongoConnectionString) {
+  console.error(
+    "MONGODB_CONNECTION_STRING is not defined in the environment variables."
+  );
+  process.exit(1);
+}
+
+mongoose
+  .connect(mongoConnectionString)
+  .then(() => {
+    app.listen(3000, () => {
+      console.log(`Server started on http://localhost:3000`);
+    });
+  })
+  .catch((err) => {
+    console.error("Database connection error:", err);
   });
-});
