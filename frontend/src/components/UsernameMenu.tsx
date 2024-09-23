@@ -13,9 +13,8 @@ import { Button } from "./ui/button";
 function UsernameMenu() {
   const { user, logout } = useAuth0();
 
-  // Check if user data is available
   if (!user) {
-    return null; // or return a loading spinner or placeholder
+    return null; 
   }
 
   return (
