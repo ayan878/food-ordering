@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import { Button } from "./ui/button";
 import Logo from "../assets/logo.png";
 import MobileNav from "./MobileNav";
+import MainNav from "./MainNav";
+
 const Header = () => {
   return (
     <div className="border-b-2 border-b-orange-500 py-6 ">
@@ -15,6 +16,9 @@ const Header = () => {
         </Link>
         <div className="md:hidden">
           <MobileNav />
+        </div>
+        <div className="hidden md:block">
+          <MainNav />
         </div>
         {/* 
         <Button className="bg-orange-500 font-bold">Log In</Button> */}
