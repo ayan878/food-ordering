@@ -14,17 +14,14 @@ function UsernameMenu() {
   const { user, logout } = useAuth0();
 
   if (!user) {
-    return null; 
+    return null;
   }
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger className="flex items-center px-3 font-bold hover:text-orange-500 gap-2">
-        <img
-          src={user.picture} 
-          alt={user.name}
-          className="w-8 rounded-full"
-        />
+        <img src={user.picture} alt={user.name} className="w-8 rounded-full" />
+        <span>{user.name}</span>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuLabel>My Account</DropdownMenuLabel>
