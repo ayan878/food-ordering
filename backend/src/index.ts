@@ -2,6 +2,7 @@ import Express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
+import myUserRoute from "./routes/MyUserRoutes"
 
 dotenv.config();
 
@@ -28,3 +29,6 @@ mongoose
   .catch((err) => {
     console.error("Database connection error:", err);
   });
+
+// route
+app.use("/api/my/user", myUserRoute);
