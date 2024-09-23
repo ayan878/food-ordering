@@ -4,8 +4,7 @@
       "source": "/(.*)",
       "destination": "/index.html"
     }
-  ]
-//   ,
-//   "cleanUrls": true,
-//   "trailingSlash": false
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
 }
