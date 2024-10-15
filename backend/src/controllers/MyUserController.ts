@@ -2,28 +2,21 @@ import { Request, Response } from "express";
 import userModel from "../models/user"; 
 
 const createCurrentUser = async (req: Request, res: Response) => {
-  const { auth0Id, email } = req.body;
-
-  // Check if the user already exists
   try {
+    const { auth0Id } = req.body;
     const existingUser = await userModel.findOne({ auth0Id });
-
+    
     if (existingUser) {
-      return res.status(409).json({ message: "User already exists" });
+      return res.status(200).send();
     }
-
-    // Create a new user
-    const user = new userModel({
-      auth0Id,
-      email,
-    });
-
-    await user.save(); 
-    res.status(201).json(user);
+    
+    const newUser = new userModel(req.body);
+    await newUser.save();
+    
+    res.status(201).json(newUser.toObject());
   } catch (error) {
-    console.error("Error creating user:", error);
-    res.status(500).json({ message: "Error creating user" }); 
+    console.log(error);
+    res.status(500).json({ message: "Error creating user" });
   }
 };
-
 export default { createCurrentUser };
