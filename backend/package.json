@@ -26,7 +26,6 @@
     "typescript": "^5.4.3"
   },
   "devDependencies": {
-    "@types/jsonwebtoken": "^9.0.6",
-    "@types/mongoose": "^5.11.97"
+    "@types/jsonwebtoken": "^9.0.6"
   }
 }
